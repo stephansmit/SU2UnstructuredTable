@@ -76,6 +76,13 @@ class Table(object):
         self.geom.add_raw_code("Mesh.Algorithm = 9;")
         return pygmsh.generate_mesh(self.geom, dim=2)
 
+    def _get_point_data(self,req_prop):
+        df = pd.DataFrame(self.mesh.points, columns=['logD', 'T', 'dummy'])
+        df['tpoints']=df.apply(lambda x: ThermodynamicPoint(np.power(10,x['logD']),x['T'],self.fluid),axis=1)
+        for prop in req_prop:
+            df[prop]=df['tpoints'].apply(lambda x: getattr(x,prop))
+        return self._convert_df_to_dict(df[req_prop])
+    
     def _convert_mesh_to_linear(self):
         for pt in self.mesh.points:
             pt[0] = np.power(10, pt[0])
@@ -85,13 +92,6 @@ class Table(object):
         for col in df.columns:
             d[col]=df[col].values
         return d
-
-    def _get_point_data(self,req_prop):
-        df = pd.DataFrame(self.mesh.points, columns=['logD', 'T', 'dummy'])
-        df['tpoints']=df.apply(lambda x: ThermodynamicPoint(np.power(10,x['logD']),x['T'],self.fluid),axis=1)
-        for prop in req_prop:
-            df[prop]=df['tpoints'].apply(lambda x: getattr(x,prop))
-        return self._convert_df_to_dict(df[req_prop])
 
 if __name__=="__main__":
     filename = "table.vtk"
