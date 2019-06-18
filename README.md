@@ -11,3 +11,6 @@ pip install pygmsh
 pip install CoolProp
 pip install meshio
 ```
+
+![alt text](https://github.com/stephansmit/SU2UnstructuredTable/blob/master/table.png)
+
