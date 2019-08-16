@@ -14,13 +14,14 @@ pip3 install --upgrade pip3 numpy
 pip3 install pandas pygmsh CoolProp meshio==3.0.0 matplotlib
 ```
 
+Or use Singularity container, see below.
 ## Use
 Run locally
 ~~~
 python3 make.table.py
 ~~~
 
-Run using Singularity
+Run using [Singularity](https://sylabs.io/singularity/) 
 ~~~~
 singularity pull shub://stephansmit/gmsh_containers
 singularity exec gms_containers.sif python3 make_table.py
