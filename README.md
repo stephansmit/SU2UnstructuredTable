@@ -9,8 +9,8 @@ Required Meshing software:
 
 Required Python modules:
 ```
-python3 -m pip3 install --upgrade pip3 numpy
-python3 -m pip3 install pandas pygmsh CoolProp meshio==3.0.0 matplotlib
+pip3 install --upgrade pip3 numpy
+pip3 install pandas pygmsh CoolProp meshio==3.0.0 matplotlib
 ```
 
 ## Use
