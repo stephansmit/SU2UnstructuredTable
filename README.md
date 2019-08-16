@@ -1,10 +1,7 @@
 # Unstructured Thermodynamic Table
 
 Code to generate unstructured thermodynamic VTK table using [CoolProp](http://www.coolprop.org/) and [Gmsh](http://gmsh.info/) 
-<p align="center">
-  <img src="https://github.com/stephansmit/SU2UnstructuredTable/blob/master/table.png" width=400>
-</p>
-
+<img align="right" width="200" src="https://github.com/stephansmit/SU2UnstructuredTable/blob/master/table.png">
 
 ## Requirements
 Required Meshing software:
