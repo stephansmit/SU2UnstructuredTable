@@ -1,5 +1,10 @@
 # Unstructured Thermodynamic Table
-Code to generate unstructured thermodynamic VTK table using [CoolProp](http://www.coolprop.org/) and [Gmsh](http://gmsh.info/)
+
+Code to generate unstructured thermodynamic VTK table using [CoolProp](http://www.coolprop.org/) and [Gmsh](http://gmsh.info/) 
+<p align="center">
+  <img src="https://github.com/stephansmit/SU2UnstructuredTable/blob/master/table.png" width=400>
+</p>
+
 
 ## Requirements
 Required Meshing software:
@@ -23,5 +28,4 @@ singularity pull shub://stephansmit/gmsh_containers
 singularity exec gms_containers.sif python3 make_table.py
 ~~~~
 
-![alt text](https://github.com/stephansmit/SU2UnstructuredTable/blob/master/table.png)
 
